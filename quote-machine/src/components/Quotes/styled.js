@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const QuoteWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   border: 1px solid black;
   height: 50vh;
