@@ -8,16 +8,9 @@ export const getQuotes = () => async dispatch => {
     const ref = await db
       .collection("quotes")
       .get()
-      .then(snapshot => {
-        snapshot.docs.map(doc => {
-          console.log(doc.data());
-          return doc.data();
-        });
-      });
+      .then(snapshot => snapshot.docs.map(doc => doc.data()));
 
-    // const quotesToReturn = quotes.map(quote => quote.data());
-
-    console.log("18", ref);
+    console.log("20", ref);
     dispatch({ type: GET_QUOTE_SUCCESS, payload: ref });
   } catch (err) {
     dispatch({ type: GET_QUOTE_FAILURE, error: err.message });

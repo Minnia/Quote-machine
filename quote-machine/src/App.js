@@ -7,8 +7,8 @@ import actions from "./redux/actions";
 import { store } from "./redux/store";
 
 const App = () => {
-  const quotes = useSelector(state => state.quotes);
-  // const { quote } = quotes;
+  const quotes = useSelector(state => state.quote);
+
   const getQuotes = () => {
     store.dispatch(actions.quotes.getQuotes());
     console.log("hello", quotes);
