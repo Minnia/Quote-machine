@@ -1,19 +1,27 @@
 import React from "react";
-//Remember to import styled components here
-import { QuoteWrapper } from "./styled";
+import { QuoteWrapper, ShareQuoteDiv } from "./styled";
 import { useSelector } from "react-redux";
 
 const Quotes = () => {
-  const quotes = useSelector(state => state.quote);
-  console.log("7", quotes);
+  const { quotes, selectedIndex } = useSelector(state => state.quoteState);
+  const randomQuote = quotes[selectedIndex];
+
   return (
     <QuoteWrapper id="quote-box">
-      {quotes.quote &&
-        quotes.quote.map(quote => (
-          <ul style={{ "list-style-type": "none" }}>
-            <li>{quote.quote}</li>
+      {quotes.length > 0 && (
+        <div id="new-quote">
+          <ul style={{ listStyleType: "none" }}>
+            <li id="text">{randomQuote.quote}</li>
+            <li id="author">-{randomQuote.author}</li>
           </ul>
-        ))}
+        </div>
+      )}
+
+      <ShareQuoteDiv>
+        <div>
+          <a id="tweet-quote">Share quote</a>
+        </div>
+      </ShareQuoteDiv>
     </QuoteWrapper>
   );
 };

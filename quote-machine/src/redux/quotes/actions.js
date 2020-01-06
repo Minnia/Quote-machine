@@ -9,9 +9,12 @@ export const getQuotes = () => async dispatch => {
       .collection("quotes")
       .get()
       .then(snapshot => snapshot.docs.map(doc => doc.data()));
-
-    console.log("20", ref);
-    dispatch({ type: GET_QUOTE_SUCCESS, payload: ref });
+    const randomIndex = Math.floor(Math.random() * ref.length);
+    // console.log("20", ref);
+    dispatch({
+      type: GET_QUOTE_SUCCESS,
+      payload: { quotes: ref, selectedIndex: randomIndex }
+    });
   } catch (err) {
     dispatch({ type: GET_QUOTE_FAILURE, error: err.message });
   }
