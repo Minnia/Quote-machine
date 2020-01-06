@@ -5,6 +5,9 @@ import { useSelector } from "react-redux";
 const Quotes = () => {
   const { quotes, selectedIndex } = useSelector(state => state.quoteState);
   const randomQuote = quotes[selectedIndex];
+  const tweetURL =
+    quotes.length &&
+    `https://twitter.com/intent/tweet?text=${randomQuote.quote}, ${randomQuote.author}`;
 
   return (
     <QuoteWrapper id="quote-box">
@@ -19,7 +22,9 @@ const Quotes = () => {
 
       <ShareQuoteDiv>
         <div>
-          <a id="tweet-quote">Share quote</a>
+          <a id="tweet-quote" href={tweetURL}>
+            Share quote
+          </a>
         </div>
       </ShareQuoteDiv>
     </QuoteWrapper>
