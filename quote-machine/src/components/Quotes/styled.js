@@ -6,8 +6,9 @@ export const QuoteWrapper = styled.div`
   justify-content: center;
   border: 1px solid black;
   height: 50vh;
-  width: 75vw;
-  margin-left: 12%;
+  width: 50vw;
+  margin-left: 25%;
+  color: white;
   text-align: center;
 `;
 
