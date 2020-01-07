@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.css";
-import Body from "./components/Background";
+import Background from "./components/Background";
 import Button from "./components/Button";
 import Quotes from "./components/Quotes";
 import actions from "./redux/actions";
@@ -11,14 +11,16 @@ const App = () => {
     console.log("getting quotes");
     store.dispatch(actions.quotes.getQuotes());
   };
+
+  useEffect(() => {
+    store.dispatch(actions.quotes.getQuotes());
+  }, []);
+
   return (
-    <Body>
-      <div>
-        <Quotes />
-        <Button getQuote={getQuotes} />
-        {/* <p quote={quote}></p> */}
-      </div>
-    </Body>
+    <Background>
+      <Quotes />
+      <Button getQuote={getQuotes} />
+    </Background>
   );
 };
 

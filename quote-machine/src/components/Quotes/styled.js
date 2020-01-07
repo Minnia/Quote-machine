@@ -4,7 +4,9 @@ export const QuoteWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   border: 1px solid black;
+  margin-top: 8px;
   height: 50vh;
   width: 50vw;
   margin-left: 25%;

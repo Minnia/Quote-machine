@@ -1,3 +1,3 @@
-import { Body } from "./styled";
+import { Background } from "./styled";
 
-export default Body;
+export default Background;

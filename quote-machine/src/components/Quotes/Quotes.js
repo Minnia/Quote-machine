@@ -1,4 +1,5 @@
 import React from "react";
+import TwitterIcon from "@material-ui/icons/Twitter";
 import { QuoteWrapper, ShareQuoteDiv } from "./styled";
 import { useSelector } from "react-redux";
 
@@ -22,8 +23,8 @@ const Quotes = () => {
 
       <ShareQuoteDiv>
         <div>
-          <a id="tweet-quote" href={tweetURL}>
-            Share quote
+          <a style={{ color: "white" }} id="tweet-quote" href={tweetURL}>
+            <TwitterIcon />
           </a>
         </div>
       </ShareQuoteDiv>
