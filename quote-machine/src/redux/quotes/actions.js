@@ -10,7 +10,6 @@ export const getQuotes = () => async dispatch => {
       .get()
       .then(snapshot => snapshot.docs.map(doc => doc.data()));
     const randomIndex = Math.floor(Math.random() * ref.length);
-    // console.log("20", ref);
     dispatch({
       type: GET_QUOTE_SUCCESS,
       payload: { quotes: ref, selectedIndex: randomIndex }
